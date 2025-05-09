@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔹 1. Один коммит — одна логическая единица
+> Не мешай в одном коммите всё подряд: стили, логику, багфиксы, новые фичи.
 
-## Expanding the ESLint configuration
+Пример плохого коммита:
+Fix bug, add feature, update styles
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Пример хорошего:
+- fix: исправлен баг с авторизацией
+- feat: добавлена кнопка "Сбросить пароль"
+- style: отступы на главной странице
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🔹 2. Следуй конвенции в названиях
+Наиболее популярная — Conventional Commits:
+<тип>: <краткое описание>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Примеры типов:
+- feat: — новая фича
+- fix: — багфикс
+- docs: — изменения в документации
+- style: — правки без изменения логики (отступы, форматирование)
+- refactor: — рефакторинг без изменения поведения
+- test: — добавлены/изменены тесты
+- chore: — вспомогательные изменения (например, обновление зависимостей)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+### 🔹 3. Пиши описания понятно и коротко
+- Используй повелительное наклонение:  
+  Вместо "Added login page" → "add login page"
+- Первая строка — до 50 символов (желательно)
+- При необходимости — добавляй описание в теле коммита (вторая строка пустая, затем описание)
+
+Пример:
+feat: добавлена форма регистрации
+
+Добавлена форма с полями email и пароль. Валидация пока только на клиенте.
+
+---
+
+### 🔹 4. Коммить чаще, но не слишком
+- Лучше 5 маленьких осмысленных коммитов, чем 1 гигантский.
+- Но не коммить каждую правку в CSS — найди баланс.
+
+---
+
+### 🔹 5. Используй `git commit -S` (подпись), если надо
+- Особенно в open-source — повышает доверие.
+
+---
+
+### 🔹 6. Ревью перед пушем
+Можно использовать git diff и git log перед git push, чтобы убедиться, что коммиты аккуратные и понятные.
+
+---
