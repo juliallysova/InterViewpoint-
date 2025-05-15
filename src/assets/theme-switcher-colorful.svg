@@ -1,0 +1,18 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="sunGradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD93D"/>
+      <stop offset="1" stop-color="#FF9B00"/>
+    </linearGradient>
+    <radialGradient id="moonGradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#DDE6ED"/>
+      <stop offset="100%" stop-color="#9DB2BF"/>
+    </radialGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="24" cy="24" r="22" stroke="#E2E8F0" stroke-width="2" fill="#F8FAFC"/>
+  <!-- Sun Half -->
+  <path d="M24 4a20 20 0 0 1 0 40 10 10 0 0 1 0-40z" fill="url(#sunGradient)" />
+  <!-- Moon Overlay -->
+  <circle cx="28" cy="20" r="10" fill="url(#moonGradient)" />
+</svg>

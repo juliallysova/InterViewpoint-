@@ -1,0 +1,7 @@
+<svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="40" height="40" rx="6" fill="#0A192F"/>
+  <path d="M22 30 L30 22 M22 30 L30 38" stroke="#64FFDA" stroke-width="2" stroke-linecap="round"/>
+  <text x="60" y="38" font-family="Arial, sans-serif" font-size="20" fill="#0A192F" font-weight="bold">
+    InterViewpoint
+  </text>
+</svg>
